@@ -1,0 +1,87 @@
+/* Background Timeline CSS */
+
+.timeline-container {
+  max-width: 680px;
+  width: 100%;
+  margin: 40px auto 0 auto;
+}
+
+.timeline-track {
+  position: relative;
+  padding-left: 32px;
+  width: 100%;
+}
+
+.timeline-trunk {
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background-color: var(--accent);
+  opacity: 0.15;
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 36px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-node:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -31px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--bg-base);
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.45);
+}
+
+.timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+
+.timeline-tag {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.timeline-heading {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.timeline-description {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: left;
+}

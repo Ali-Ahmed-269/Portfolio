@@ -1,0 +1,88 @@
+/* Capabilities Section Grid and Cards */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.capability-card {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.capability-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.capability-index {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.capability-icon-wrapper {
+  color: var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 28px;
+  width: 28px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capability-card:hover .capability-icon-wrapper {
+  color: var(--accent);
+}
+
+.capability-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+}
+
+.capability-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.capability-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .capability-card {
+    padding: 24px;
+  }
+}
