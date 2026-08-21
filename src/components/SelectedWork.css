@@ -17,10 +17,10 @@
   background-color: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 32px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   text-align: left;
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
               transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -28,8 +28,47 @@
 }
 
 .project-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
   transform: translateY(-4px);
+}
+
+.project-visual {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(196, 30, 58, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-placeholder-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+.project-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-meta {
@@ -42,7 +81,7 @@
 
 .project-category {
   font-family: var(--font-mono);
-  color: var(--accent-secondary);
+  color: var(--accent);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -56,7 +95,7 @@
 }
 
 .project-link {
-  color: var(--accent-secondary);
+  color: var(--text-secondary);
   transition: color 0.2s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
@@ -79,6 +118,11 @@
   color: var(--text-primary);
   margin-bottom: 12px;
   letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent);
 }
 
 .project-desc {
@@ -98,12 +142,18 @@
 
 .project-tag {
   font-family: var(--font-mono);
-  background-color: rgba(148, 163, 184, 0.06);
+  background-color: rgba(196, 30, 58, 0.05);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
   font-size: 11px;
   padding: 4px 10px;
   border-radius: 4px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-card:hover .project-tag {
+  border-color: rgba(196, 30, 58, 0.3);
+  color: var(--text-primary);
 }
 
 /* Responsive Scaling */
@@ -113,7 +163,7 @@
     gap: 20px;
   }
   
-  .project-card {
+  .project-content {
     padding: 24px;
   }
 }

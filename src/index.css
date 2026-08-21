@@ -2,24 +2,24 @@
 
 :root {
   /* Design Tokens */
-  --bg-base: #060915;
-  --bg-surface: #0B1024;
-  --bg-elevated: #111830;
-  --bg-glow: radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.08), transparent 60%);
+  --bg-base: #0A0505;
+  --bg-surface: #150808;
+  --bg-elevated: #1F0A0A;
+  --bg-glow: radial-gradient(circle at 50% 0%, rgba(196, 30, 58, 0.12), transparent 60%);
 
   /* Accent */
-  --accent: #D97706;
-  --accent-hover: #F59E0B;
-  --accent-dim: rgba(217, 119, 6, 0.15);
-  --accent-secondary: #64748B;
+  --accent: #C41E3A;
+  --accent-hover: #E8384F;
+  --accent-dim: rgba(196, 30, 58, 0.15);
+  --accent-secondary: #8B6464;
 
   /* Text */
-  --text-primary: #FAFAFA;
-  --text-secondary: #D4D4D4;
-  --text-muted: #64748B;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A8A0A0;
+  --text-muted: #807070;
 
   /* Borders */
-  --border-subtle: rgba(148, 163, 184, 0.12);
+  --border-subtle: rgba(196, 30, 58, 0.15);
   --border-hover: var(--accent);
 
   /* Fonts */
@@ -33,6 +33,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+[data-theme="light"] {
+  --bg-base: #FCF8F8;
+  --bg-surface: #FFF5F5;
+  --bg-elevated: #FFEBEB;
+  --bg-glow: radial-gradient(circle at 50% 0%, rgba(196, 30, 58, 0.06), transparent 60%);
+
+  /* Keep accents the same */
+  --accent: #C41E3A;
+  --accent-hover: #E8384F;
+  --accent-dim: rgba(196, 30, 58, 0.08);
+  --accent-secondary: #8B6464;
+
+  /* Text (dark neutrals) */
+  --text-primary: #1C0508;
+  --text-secondary: #47262A;
+  --text-muted: #807070;
+
+  /* Borders */
+  --border-subtle: rgba(196, 30, 58, 0.12);
+}
+
 
 /* Global Reset & Base Styles */
 * {

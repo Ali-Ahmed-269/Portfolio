@@ -21,7 +21,7 @@ export const SelectedWork: React.FC = () => {
       description: 'A guest house booking application featuring client flows, real-time availability calendars, admin booking management, and integrated services.',
       tags: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS'],
       githubUrl: 'https://github.com/Ali-Ahmed-269/TULIP-Guest-Rooms',
-      liveUrl: 'https://github.com/Ali-Ahmed-269/TULIP-Guest-Rooms', // Pointing to repo/release page as live url
+      liveUrl: 'https://tulip-guest-rooms.vercel.app/',
       image: 'images/tulip-project.png',
     },
     {

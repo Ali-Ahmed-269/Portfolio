@@ -46,8 +46,8 @@ export const Background: React.FC = () => {
   return (
     <section className="section" id="background">
       <div className="container">
-        <SectionIndex number="05" label="Background" />
-        <h2 className="section-title">Academic & Technical Evolution</h2>
+        <SectionIndex number="06" label="The Journey" />
+        <h2 className="section-title">How I Got Here</h2>
 
         <div className="timeline-container">
           <div className="timeline-track">

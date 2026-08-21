@@ -1,12 +1,11 @@
 /* Navbar Styling */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 16px;
   left: 0;
   width: 100%;
   height: 64px;
-  background-color: var(--bg-base);
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: transparent;
   z-index: 1100;
   display: flex;
   align-items: center;
@@ -16,51 +15,190 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+}
+
+.navbar-avatar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid var(--border-subtle);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  background-color: var(--bg-surface);
+}
+
+.navbar-avatar-btn:hover {
+  border-color: var(--accent);
+  transform: scale(1.05);
 }
 
 .navbar-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--border-subtle);
 }
 
-.navbar-logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--text-primary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* Center Pill Nav Styling */
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.navbar-right {
+.navbar-pill {
   display: flex;
   align-items: center;
+  gap: 4px;
+  background-color: rgba(21, 8, 8, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 30px;
+  padding: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-link {
-  font-family: var(--font-mono);
+[data-theme="light"] .navbar-pill {
+  background-color: rgba(255, 245, 245, 0.75);
+}
+
+.navbar-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: color 0.2s ease;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.navbar-link:hover {
-  color: var(--accent);
+.navbar-pill-link:hover {
+  color: var(--text-primary);
+  background-color: rgba(196, 30, 58, 0.1);
 }
+
+.navbar-pill-link .nav-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Right Side Styling */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-status-widget {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.navbar-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 12px var(--accent);
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+.navbar-status-label {
+  font-weight: 500;
+}
+
+.navbar-status-divider {
+  color: var(--border-subtle);
+}
+
+.navbar-status-time {
+  font-variant-numeric: tabular-nums;
+}
+
+.theme-toggle {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    top: 8px;
+  }
+  
+  .navbar-status-widget {
+    display: none;
+  }
+  
+  .navbar-pill-link span {
+    display: none;
+  }
+  
+  .navbar-pill-link {
+    padding: 8px;
+    border-radius: 50%;
+  }
+}
+

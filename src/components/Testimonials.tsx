@@ -6,8 +6,8 @@ export const Testimonials: React.FC = () => {
   return (
     <section className="section" id="testimonials">
       <div className="container">
-        <SectionIndex number="04" label="What Collaborators Say" />
-        <h2 className="section-title">Testimonials & Endorsements</h2>
+        <SectionIndex number="05" label="Client Feedback" />
+        <h2 className="section-title">In Their Words</h2>
         
         <div className="testimonials-featured-container">
           <div className="testimonial-featured-card">

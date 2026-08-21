@@ -58,8 +58,8 @@ export const Capabilities: React.FC = () => {
   return (
     <section className="section" id="capabilities">
       <div className="container">
-        <SectionIndex number="03" label="Capabilities" />
-        <h2 className="section-title">Core Development Offerings</h2>
+        <SectionIndex number="04" label="Core Strengths" />
+        <h2 className="section-title">What I Bring to the Table</h2>
         
         <div className="capabilities-grid">
           {capabilitiesList.map((item) => (

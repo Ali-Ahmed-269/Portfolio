@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, type Variants } from 'framer-motion';
 import { SectionIndex } from './SectionIndex';
 import './TechStack.css';
 
@@ -123,19 +124,45 @@ export const TechStack: React.FC = () => {
     },
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 }
+    },
+  };
+
   return (
     <section className="tech-stack-section" id="tech-stack">
       <SectionIndex number="01" label="Tech Stack" />
-      <div className="tech-grid">
+      <motion.div 
+        className="tech-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {techs.map((tech, idx) => (
-          <div key={idx} className="tech-card">
+          <motion.div key={idx} variants={itemVariants} className="tech-card">
             <div className="tech-icon-wrapper">
               {tech.icon}
             </div>
             <span className="tech-name">{tech.name}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
+

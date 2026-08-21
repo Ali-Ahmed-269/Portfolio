@@ -1,29 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SectionIndex } from './SectionIndex';
 import { Button } from './Button';
 import './Contact.css';
 
 export const Contact: React.FC = () => {
-  const [currency, setCurrency] = useState<'PKR' | 'USD'>('PKR');
-
-  const toggleCurrency = () => {
-    setCurrency((prev) => (prev === 'PKR' ? 'USD' : 'PKR'));
-  };
-
   return (
     <section className="contact-section" id="contact">
       <div className="contact-content">
-        <SectionIndex number="06" label="Contact" />
+        <SectionIndex number="07" label="Get in Touch" />
         
         <h2 className="contact-headline">Let's build something.</h2>
         
         <p className="contact-availability">
-          Projects from {currency === 'PKR' ? '50,000 PKR' : '$180'} · Retainers from {currency === 'PKR' ? '80,000 PKR/mo' : '$280/mo'} · <a href="#contact" className="contact-freelance-link">Available for freelance</a>
+          Currently a CS student open to internship opportunities, freelance work, and contract projects.
         </p>
-
-        <button className="currency-toggle" onClick={toggleCurrency}>
-          {currency === 'PKR' ? 'Switch to USD $' : 'Switch to PKR ₨'}
-        </button>
         
         <div className="contact-cta-wrapper">
           <Button href="mailto:alikhanswati42574@gmail.com">

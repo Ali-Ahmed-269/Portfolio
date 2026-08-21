@@ -43,7 +43,7 @@
   border-radius: 50%;
   background-color: var(--accent);
   border: 2px solid var(--bg-base);
-  box-shadow: 0 0 6px rgba(217, 119, 6, 0.45);
+  box-shadow: 0 0 6px rgba(196, 30, 58, 0.45);
 }
 
 .timeline-meta {

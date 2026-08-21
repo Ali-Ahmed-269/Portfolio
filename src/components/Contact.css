@@ -2,10 +2,11 @@
 .contact-section {
   padding: 120px 0;
   width: 100%;
+  scroll-margin-top: 120px;
 }
 
 .contact-content {
-  max-width: 680px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -28,49 +29,18 @@
   font-size: 18px;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.contact-freelance-link {
-  color: var(--text-primary);
-  text-decoration: underline;
-  text-decoration-color: var(--border-hover);
-  text-underline-offset: 4px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-.contact-freelance-link:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-}
-
-.currency-toggle {
-  background: transparent;
-  border: 1px solid var(--border-subtle);
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 40px;
-}
-
-.currency-toggle:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--bg-elevated);
+  margin-bottom: 32px;
+  max-width: 600px;
 }
 
 .contact-cta-wrapper {
   margin-bottom: 48px;
 }
 
-/* Horizontal Link Rows */
+/* Horizontal Link Rows -> Compact Info Chips Grid */
 .contact-links-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   width: 100%;
 }
@@ -79,23 +49,26 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 16px 20px;
+  padding: 12px 16px;
   background-color: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.2s ease, 
+              background-color 0.2s ease,
+              transform 0.2s ease;
+  overflow: hidden;
 }
 
 .contact-link-row:hover {
-  border-color: var(--border-hover);
+  border-color: var(--accent);
+  background-color: rgba(196, 30, 58, 0.05);
   transform: translateY(-2px);
 }
 
 .contact-link-icon {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: var(--bg-base);
   border: 1px solid var(--border-subtle);
@@ -103,39 +76,57 @@
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
-  margin-right: 20px;
+  margin-right: 12px;
   flex-shrink: 0;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-link-row:hover .contact-link-icon {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .contact-link-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .contact-link-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+  overflow: hidden;
 }
 
 .contact-link-label {
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--accent);
+  font-size: 10px;
+  color: var(--text-muted);
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .contact-link-value {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 13px;
   color: var(--text-primary);
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .contact-links-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .contact-section {
     padding: 80px 0;
+    scroll-margin-top: 80px;
   }
 
   .contact-headline {
@@ -146,15 +137,7 @@
     font-size: 16px;
   }
   
-  .contact-link-row {
-    padding: 14px 16px;
-  }
-  
-  .contact-link-icon {
-    margin-right: 16px;
-  }
-  
-  .contact-link-value {
-    font-size: 14px;
+  .contact-links-list {
+    grid-template-columns: 1fr;
   }
 }
